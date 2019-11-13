@@ -26,7 +26,8 @@ instead of array notation in this function.	*/
 
 #include <iostream>
 #include <stdio.h> 
-#include"modeFunction.h"     
+#include"modeFunction.h"    
+#include<fstream> 
 //#include"MyMode.h"
 using namespace std;
 
@@ -42,8 +43,11 @@ int main()
 	int size;
 	
 	cout << "Choose the size of the array to get the mode. \t ";
-	
-	cin >> size;
+  ifstream input;
+	input.open("input.dat", ios::in);
+  input>>size;
+
+	//cin >> size;
   try{
   if (size<=1)throw string("please enter a valid positive integer superior to 0 & 1");
     }
